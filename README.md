@@ -1,1 +1,34 @@
 # Xiaomi-OpenWrt-firmware-toolkit
+
+**Description**
+
+This tool enables you to do further research on Xiaomi IoT device.
+
+The toolkit currently have two features, (1) verification and (2) extraction.
+
+**Usage**
+
+```bash
+# show firmware info
+python ./extractor.py -s ./mico_all_0f70e_1.34.36.bin
+# extract firmware (-d or --dest for setting dstination directory)
+python ./extractor.py -d /home/user/mico -e ./mico_all_0f70e_1.34.36.bin
+# print usage
+python ./extractor.py -h
+```
+
+As far as I know, Xiaomi router and speaker devices are based on OpenWrt system.
+
+The firmware name always starts with its `product id`, followed by `model id`, `string: "all"||"firmware"`, `5 random lowercase+digit words`, and the last `version number`.
+
+For Example:
+1. `miwifi_r4ac_firmware_cc751_2.18.53.bin`
+   
+    `product id`: miwifi, `model id`: r4ac
+
+2. `mico_all_0f70e_1.34.36.bin`
+       
+    `product id`: mico
+3. `miwifi_r3a_all_da132_2.18.40.bin`
+
+    `product id`: miwifi, `model id`: r3a
