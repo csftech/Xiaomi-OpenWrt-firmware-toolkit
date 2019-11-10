@@ -4,7 +4,7 @@
 
 This tool enables you to do further research on Xiaomi IoT device.
 
-The toolkit currently have two features, (1) verification and (2) extraction.
+The toolkit currently have two features, (1) show info (2) extraction.
 
 **Usage**
 
