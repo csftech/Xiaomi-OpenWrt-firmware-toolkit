@@ -72,7 +72,7 @@ class Firmware():
                 # extract segment
                 with open(os.path.join(self.dest_dir, segment_header.segment_name.decode()), 'wb') as s:
                     s.write(self.fd.read(segment_header.length))
-                    logging.info(f'extracting segment: {segment_header.segment_name}')
+                    logging.info(f'extracting segment: {segment_header.segment_name.decode("ascii")}')
         
 
 def run(path, extract=False, dest=None):
@@ -81,8 +81,9 @@ def run(path, extract=False, dest=None):
     if firmware.verify():
         logging.info('[Jobs] Verification success: it\'s a genuine firmware from Xiaomi.')
         
-        if extract: firmware.extract(dest)
-        logging.info('[Jobs] Extraction complete.')
+        if extract:
+            firmware.extract(dest)
+            logging.info('[Jobs] Extraction complete.')
 
 
 if __name__ == '__main__':
