@@ -11,7 +11,7 @@ The toolkit currently have two features, (1) show info (2) extraction.
 ```bash
 # show firmware info
 python ./extractor.py -s ./mico_all_0f70e_1.34.36.bin
-# extract firmware (-d or --dest for setting dstination directory)
+# extract firmware (-d or --dest for setting destination directory)
 python ./extractor.py -d /home/user/mico -e ./mico_all_0f70e_1.34.36.bin
 # print usage
 python ./extractor.py -h
