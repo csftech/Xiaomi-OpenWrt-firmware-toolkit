@@ -10,11 +10,11 @@ The toolkit currently have two features, (1) show info (2) extraction.
 
 ```bash
 # show firmware info
-python ./toolkit.py -s ./mico_all_0f70e_1.34.36.bin
+python3 ./toolkit.py -s ./mico_all_0f70e_1.34.36.bin
 # extract firmware (-d or --dest for setting destination directory)
-python ./toolkit.py -d /home/user/mico -e ./mico_all_0f70e_1.34.36.bin
+python3 ./toolkit.py -d /home/user/mico -e ./mico_all_0f70e_1.34.36.bin
 # print usage
-python ./toolkit.py -h
+python3 ./toolkit.py -h
 ```
 
 As far as I know, Xiaomi router and speaker devices are based on OpenWrt system.
