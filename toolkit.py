@@ -4,6 +4,7 @@
 import argparse
 import binascii
 import ctypes
+import hashlib
 import logging
 import os
 import time
@@ -52,6 +53,14 @@ class Firmware():
         computed_checksum = ~binascii.crc32(self.fd.read()) & 0xffffffff
         logging.info(f'computed crc32_checksum: {hex(computed_checksum)}')
         assert self.image_header.crc32_checksum == computed_checksum
+
+        # md5
+        self.fd.seek(0)
+        m = hashlib.md5()
+        m.update(self.fd.read())
+        hash = m.hexdigest()
+        logging.info(f'computed md5 hash: {hash}')
+        assert hash[-5:] == os.path.basename(self.path).split('_')[-2]
 
         self.fd.seek(0)
         return True
