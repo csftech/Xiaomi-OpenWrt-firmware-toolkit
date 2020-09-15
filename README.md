@@ -19,7 +19,7 @@ python ./toolkit.py -h
 
 As far as I know, Xiaomi router and speaker devices are based on OpenWrt system.
 
-The firmware name always starts with its `product id`, followed by `model id`, `string: "all"||"firmware"`, `5 random lowercase+digit words`, and the last `version number`.
+The firmware name always starts with its `product id`, followed by `model id`, `string: "all"||"firmware"`, `MD5 hash last 5 characters`, and the last `version number`.
 
 For Example:
 1. `miwifi_r4ac_firmware_cc751_2.18.53.bin`
